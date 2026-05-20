@@ -24,3 +24,6 @@ logs/
 
 # Local databases
 /backend/*.db
+
+# Environment files
+/backend/.env
