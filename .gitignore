@@ -1,0 +1,26 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+/.vite
+
+# Environment
+.env
+.env.local
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+
+# Local databases
+/backend/*.db
