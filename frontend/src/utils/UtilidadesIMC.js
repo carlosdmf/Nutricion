@@ -112,14 +112,6 @@ function convertirAltura(alturaCm) {
 }
 
 
-
-// ======================================================
-// Cálculo del IMC
-// ======================================================
-
-// ✔ Función separada para reutilización
-// ✔ Código más limpio y modular
-
 export function calcularIMC(peso, altura) {
 
   const alturaMetros = convertirAltura(altura);

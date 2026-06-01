@@ -1,21 +1,36 @@
 const mysql = require('mysql2');
-require('dotenv').config();
 
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+// =====================================
+// SINGLETON DB
+// =====================================
+
+const conexion = mysql.createConnection({
+
+  host: 'localhost',
+
+  user: 'root',
+
+  password: '',
+
+  database: 'nutriscan_db'
+
 });
 
-connection.connect((err) => {
+conexion.connect((err) => {
 
   if (err) {
-    console.log('Error MySQL');
+
+    console.log(err);
     return;
+
   }
 
   console.log('MySQL conectado');
+
 });
 
-module.exports = connection;
+// =====================================
+// EXPORTAR CONEXION
+// =====================================
+
+module.exports = conexion;

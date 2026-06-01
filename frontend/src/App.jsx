@@ -1,14 +1,49 @@
+// =====================================
+// APP PRINCIPAL
+// NutriScan AI
+// =====================================
+
 import {
+
   BrowserRouter,
+
   Routes,
+
   Route
+
 } from 'react-router-dom';
 
-import Login from './pages/Login';
+// =====================================
+// PAGINAS
+// =====================================
 
-import Registro from './pages/Registro';
+import Login
+from './pages/Login';
 
-import Dashboard from './pages/Dashboard';
+import Registro
+from './pages/Registro';
+
+import Dashboard
+from './pages/Dashboard';
+
+import Perfil
+from './pages/Perfil';
+
+import Dieta
+from './pages/Dieta';
+
+import Historial
+from './pages/Historial';
+
+import EscanerComida
+from './pages/EscanearComida';
+
+import ChatNutricional
+from './pages/ChatNutricional';
+
+// =====================================
+// APP
+// =====================================
 
 function App() {
 
@@ -18,22 +53,85 @@ function App() {
 
       <Routes>
 
+        {/* LOGIN */}
+
         <Route
+
           path="/"
+
           element={<Login />}
+
         />
 
+        {/* REGISTRO */}
+
         <Route
+
           path="/registro"
+
           element={<Registro />}
+
         />
+
+        {/* DASHBOARD */}
 
         <Route
+
           path="/dashboard"
+
           element={<Dashboard />}
+
         />
 
-        {/* NUEVA VISTA IA */}
+        {/* PERFIL */}
+
+        <Route
+
+          path="/perfil"
+
+          element={<Perfil />}
+
+        />
+
+        {/* DIETA */}
+
+        <Route
+
+          path="/dieta"
+
+          element={<Dieta />}
+
+        />
+
+        {/* HISTORIAL */}
+
+        <Route
+
+          path="/historial"
+
+          element={<Historial />}
+
+        />
+
+        {/* ESCANEAR COMIDA */}
+
+        <Route
+
+          path="/escanear"
+
+          element={<EscanerComida />}
+
+        />
+
+        {/* CHAT IA */}
+
+        <Route
+
+          path="/chat"
+
+          element={<ChatNutricional />}
+
+        />
 
       </Routes>
 
