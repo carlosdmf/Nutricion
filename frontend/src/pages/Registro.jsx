@@ -390,6 +390,7 @@ function Registro() {
     peso: '',
     altura: '',
     objetivo: '',
+    enfermedad: 'ninguna'
   });
 
   const [mensaje, setMensaje] = useState('');
@@ -426,17 +427,16 @@ function Registro() {
         <div className="reg-card">
 
           {/* LOGO */}
-        {/* LOGO */}
-<div className="reg-logo-wrap">
-  <div className="reg-logo">
-    <UserCircle
-      size={42}
-      color="#22c55e"
-      strokeWidth={1.25}
-    />
-    <div className="reg-logo-ring" />
-  </div>
-</div>
+          <div className="reg-logo-wrap">
+            <div className="reg-logo">
+              <UserCircle
+                size={42}
+                color="#22c55e"
+                strokeWidth={1.25}
+              />
+              <div className="reg-logo-ring" />
+            </div>
+          </div>
 
           {/* BADGE */}
           <div className="reg-badge-wrap">
@@ -533,6 +533,23 @@ function Registro() {
               <option value="bajar_peso">🔥 Bajar peso</option>
               <option value="mantener">⚖️ Mantener</option>
               <option value="ganar_musculo">💪 Ganar músculo</option>
+            </select>
+          </div>
+
+          {/* Condición médica */}
+          <div className="reg-field">
+            <label>Condición médica</label>
+            <select
+              value={form.enfermedad}
+              onChange={manejarCambio('enfermedad')}
+            >
+              <option value="ninguna">Ninguna</option>
+              <option value="diabetes">Diabetes</option>
+              <option value="hipertension">Hipertensión</option>
+              <option value="colesterol_alto">Colesterol alto</option>
+              <option value="gastritis">Gastritis</option>
+              <option value="intolerancia_lactosa">Intolerancia a la lactosa</option>
+              <option value="celiaquia">Celiaquía (sin gluten)</option>
             </select>
           </div>
 

@@ -76,7 +76,8 @@ app.post('/usuarios/registro', async (req, res) => {
     edad,
     peso,
     altura,
-    objetivo
+    objetivo,
+    enfermedad
 
   } = req.body;
 
@@ -90,11 +91,12 @@ app.post('/usuarios/registro', async (req, res) => {
       edad,
       peso,
       altura,
-      objetivo
+      objetivo,
+      enfermedad
 
     )
 
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 
   `;
 
@@ -110,7 +112,8 @@ app.post('/usuarios/registro', async (req, res) => {
       edad,
       peso,
       altura,
-      objetivo
+      objetivo,
+      enfermedad
 
     ],
 
@@ -191,6 +194,14 @@ app.post('/usuarios/registro', async (req, res) => {
         Peso: ${peso} kg
         Altura: ${altura} cm
         Objetivo: ${objetivo}
+        Enfermedad: ${enfermedad}
+
+        Si el usuario tiene una enfermedad
+        o condición médica, adapta el plan
+        nutricional para esa condición.
+
+        Evita alimentos perjudiciales y
+        recomienda alimentos adecuados.
 
         Recomendación inicial:
 

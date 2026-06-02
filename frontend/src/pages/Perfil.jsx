@@ -6,7 +6,7 @@ import obtenerSesion from '../utils/obtenerSesion';
 import {
   UserCircle, Cake, Weight, Ruler, Target,
   Flame, Droplets, Beef, Moon, CheckCircle2,
-  Activity, BarChart3,
+  Activity, BarChart3, HeartPulse,
 } from 'lucide-react';
 
 const styles = `
@@ -52,7 +52,6 @@ const styles = `
     max-width: 1200px;
   }
 
-  /* ── HEADER ── */
   .perfil-header {
     margin-bottom: 44px;
     animation: fadeUp 0.6s ease both;
@@ -98,7 +97,6 @@ const styles = `
     font-weight: 300;
   }
 
-  /* ── GRID ── */
   .perfil-grid {
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -106,7 +104,6 @@ const styles = `
     animation: fadeUp 0.6s 0.1s ease both;
   }
 
-  /* ── CARD BASE ── */
   .card {
     background: #0b1120;
     border-radius: 20px;
@@ -134,7 +131,6 @@ const styles = `
 
   .card:hover::before { opacity: 1; }
 
-  /* ── AVATAR ── */
   .avatar-wrap {
     display: flex;
     justify-content: center;
@@ -185,7 +181,6 @@ const styles = `
     margin-bottom: 20px;
   }
 
-  /* ── INFO ITEM ── */
   .info-item {
     display: flex;
     align-items: center;
@@ -232,14 +227,12 @@ const styles = `
     margin: 0;
   }
 
-  /* ── COLUMNA DERECHA ── */
   .col-derecha {
     display: flex;
     flex-direction: column;
     gap: 24px;
   }
 
-  /* ── CARD TITLE ── */
   .card-title {
     font-size: 13px;
     font-weight: 600;
@@ -258,7 +251,6 @@ const styles = `
     background: rgba(255,255,255,0.04);
   }
 
-  /* ── IMC ── */
   .imc-row {
     display: flex;
     align-items: center;
@@ -318,7 +310,6 @@ const styles = `
     transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1);
   }
 
-  /* ── STATS ── */
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -374,7 +365,6 @@ const styles = `
     margin: 0;
   }
 
-  /* ── LOADING ── */
   .loading-screen {
     min-height: 100vh;
     background: #080c14;
@@ -401,7 +391,6 @@ const styles = `
     text-transform: uppercase;
   }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -496,10 +485,11 @@ function Perfil() {
                 <p className="perfil-nombre">{usuario?.nombre}</p>
                 <p className="perfil-email">{usuario?.email}</p>
                 <div className="divider" />
-                <InfoItem titulo="Edad"     valor={`${usuario?.edad} años`} Icon={Cake}   />
-                <InfoItem titulo="Peso"     valor={`${usuario?.peso} kg`}   Icon={Weight} />
-                <InfoItem titulo="Altura"   valor={`${usuario?.altura} cm`} Icon={Ruler}  />
-                <InfoItem titulo="Objetivo" valor={usuario?.objetivo}       Icon={Target} />
+                <InfoItem titulo="Edad"      valor={`${usuario?.edad} años`} Icon={Cake}       />
+                <InfoItem titulo="Peso"      valor={`${usuario?.peso} kg`}   Icon={Weight}     />
+                <InfoItem titulo="Altura"    valor={`${usuario?.altura} cm`} Icon={Ruler}      />
+                <InfoItem titulo="Objetivo"  valor={usuario?.objetivo}       Icon={Target}     />
+                <InfoItem titulo="Condición" valor={usuario?.enfermedad}     Icon={HeartPulse} />
               </div>
 
               {/* COLUMNA DERECHA */}
@@ -561,8 +551,6 @@ function Perfil() {
     </>
   );
 }
-
-// ── COMPONENTES AUXILIARES ─────────────────────────────────
 
 function InfoItem({ titulo, valor, Icon }) {
   return (

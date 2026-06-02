@@ -4,13 +4,15 @@
   "description": "NutriScan AI",
   "main": "server.js",
   "scripts": {
-    "test": "jest --setupFilesAfterEnv ./tests/setup.js",
+    "test": "jest",
     "coverage": "jest --coverage",
     "test:debug": "jest --detectOpenHandles"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ]
+  },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.16.1",
